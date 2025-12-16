@@ -4,8 +4,8 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const app = express();
 
-const FRONTEND_URL = 'trocar';
-const BACKEND_URL = 'trocar';
+const FRONTEND_URL = 'https://crm-x-production-8a15.up.railway.app';
+const BACKEND_URL = 'https://crm-x-backend-production.up.railway.app/api';
 
 app.use(cors({
     origin: FRONTEND_URL,
@@ -37,7 +37,7 @@ app.use('/api', createProxyMiddleware({
     }
 }));
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => {
     console.log(`Proxy rodando na porta ${PORT}`);
 });
